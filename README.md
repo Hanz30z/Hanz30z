@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="[LINK_BANNER_ANDA.gif_atau_.png]" alt="Banner Profil Hanz30z">
-</p>
-
 ---
 
 <table width="100%">
