@@ -47,10 +47,3 @@
 
 ---
 
-### 📫 Hubungi Saya
-
-<p align="left">
-  <a href="https://www.instagram.com/hanz30z/">
-    <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
-  </a>
-</p>
