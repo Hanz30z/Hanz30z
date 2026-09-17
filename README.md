@@ -1,49 +1,63 @@
----
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=F75C7E&center=true&vcenter=true&width=500&lines=Halo%2C+saya+Johan+Eka+Saputra!;Python+%26+JavaScript+Enthusiast;Automation+Tools+%26+CLI+Developer;Currently+Learning+React" alt="Typing SVG" />
+</div>
+
+<br/>
 
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
-      <h3>👋 Halo, perkenalkan saya Johan Eka Saputra!</h3>
+    <td width="55%" valign="top">
+      <h3>👨‍💻 Tentang Saya</h3>
       <p>
-        Saya seorang developer yang antusias dengan fokus pada <b>Python</b> dan <b>JavaScript</b>. Saya suka membuat tools automasi dan aplikasi command-line (CLI) yang mempermudah pekerjaan sehari-hari.
-        <br><br>
-        Saat ini, saya sedang mendalami <b>React</b>. ⚛️
+        Developer yang berfokus pada pengembangan <b>tools automasi</b> dan <b>aplikasi Command-Line (CLI)</b> untuk efisiensi alur kerja.
       </p>
+      <ul>
+        <li>🔭 <b>Fokus Utama:</b> Python & JavaScript</li>
+        <li>🌱 <b>Sedang Mempelajari:</b> React ⚛️ & Arsitektur Web</li>
+        <li>⚡ <b>Minat:</b> Automation, CLI Utilities, & Scripting</li>
+      </ul>
     </td>
-    <td width="50%" valign="top" align="center">
+    <td width="45%" valign="top" align="center">
       <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img align="center" src="https://github-readme-stats.vercel.app/api?username=Hanz30z&show_icons=true&locale=en&theme=tokyonight&rank_icon=github" alt="Hanz30z's GitHub stats" />
+        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=Hanz30z&show_icons=true&locale=en&theme=radical&hide_border=true&rank_icon=github" alt="Hanz30z's GitHub stats" />
       </a>
     </td>
   </tr>
 </table>
 
+<br/>
+
 ### 🛠️ Teknologi & Tools
 
 <p align="left">
-  <a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a>
-  <a href="https://nodejs.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/></a>
-  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="NodeJS" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 </p>
 
----
+<br/>
 
-### 📊 Statistik & Pencapaian
+### 📊 Statistik & Aktivitas
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hanz30z&layout=compact&locale=en&theme=tokyonight" alt="Top Languages" />
-</p>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hanz30z&layout=compact&locale=en&theme=radical&hide_border=true" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Hanz30z&theme=radical&hide_border=true" alt="WakaTime Stats" />
+</div>
+
+<br/>
 
 <p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=Hanz30z&theme=gruvbox&row=1&column=7" alt="GitHub Trophies" />
+    <img src="https://github-profile-trophy.vercel.app/?username=Hanz30z&theme=radical&row=1&column=7" alt="GitHub Trophies" />
   </a>
 </p>
 
+<br/>
+
+### 🐍 Grafik Kontribusi
+
 <p align="center">
-  <img src="https://github.com/Hanz30z/Hanz30z/blob/output/github-contribution-grid-snake.svg" alt="Animasi Kontribusi Ular">
+  <img src="https://raw.githubusercontent.com/Hanz30z/Hanz30z/output/github-contribution-grid-snake.svg" alt="Animasi Kontribusi Ular">
 </p>
-
----
-
