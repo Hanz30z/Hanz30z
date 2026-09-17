@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=F75C7E&center=true&vcenter=true&width=500&lines=Halo%2C+saya+Johan+Eka+Saputra!;Pengembang+Python+%26+JavaScript;Pembuat+Alat+Automasi+%26+Aplikasi+CLI;Sedang+Mendalami+React" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=F75C7E&center=true&vcenter=true&width=500&lines=Halo%2C+saya+Johan+Eka+Saputra!;Python+%26+JavaScript+Developer;Automation+Tools+%26+CLI+Developer;Sedang+Mendalami+React" alt="Typing SVG" />
 </div>
 
 <br/>
@@ -9,12 +9,12 @@
     <td width="55%" valign="top">
       <h3>👨‍💻 Tentang Saya</h3>
       <p>
-        Developer yang berfokus pada pengembangan <b>tools automasi</b> dan <b>aplikasi Command-Line (CLI)</b> untuk efisiensi alur kerja.
+        Developer yang berfokus pada pengembangan <b>tools automation</b> dan <b>aplikasi Command-Line (CLI)</b> untuk efisiensi workflow.
       </p>
       <ul>
         <li>🔭 <b>Fokus Utama:</b> Python & JavaScript</li>
-        <li>🌱 <b>Sedang Mempelajari:</b> React ⚛️ & Arsitektur Web</li>
-        <li>⚡ <b>Minat:</b> Automasi, CLI Utilities, & Scripting</li>
+        <li>🌱 <b>Sedang Mempelajari:</b> React ⚛️ & Modern Web</li>
+        <li>⚡ <b>Minat:</b> Automation, CLI Utilities, & Scripting</li>
       </ul>
     </td>
     <td width="45%" valign="top" align="center">
