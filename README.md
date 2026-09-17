@@ -19,7 +19,7 @@
     </td>
     <td width="45%" valign="top" align="center">
       <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=Hanz30z&show_icons=true&theme=radical" alt="Hanz30z's GitHub stats" />
+        <img width="100%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Hanz30z&show_icons=true&theme=radical" alt="Hanz30z's GitHub stats" />
       </a>
     </td>
   </tr>
@@ -43,13 +43,13 @@
 
 <div align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hanz30z&layout=compact&theme=radical" alt="Top Languages" />
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=Hanz30z&layout=compact&theme=radical" alt="Top Languages" />
   </a>
 </div>
 
 <p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=Hanz30z&theme=radical&row=1&column=7" alt="GitHub Trophies" />
+    <img src="https://github-profile-trophy-eight-theta.vercel.app/?username=Hanz30z&theme=radical&row=1&column=7" alt="GitHub Trophies" />
   </a>
 </p>
 
