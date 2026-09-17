@@ -19,7 +19,7 @@
     </td>
     <td width="45%" valign="top" align="center">
       <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=Hanz30z&show_icons=true&locale=en&theme=radical&hide_border=true&rank_icon=github" alt="Hanz30z's GitHub stats" />
+        <img width="100%" src="https://github-readme-stats.vercel.app/api?username=Hanz30z&show_icons=true&theme=radical" alt="Hanz30z's GitHub stats" />
       </a>
     </td>
   </tr>
@@ -42,11 +42,10 @@
 ### 📊 Statistik & Aktivitas
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hanz30z&layout=compact&locale=en&theme=radical&hide_border=true" alt="Top Languages" />
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Hanz30z&theme=radical&hide_border=true" alt="WakaTime Stats" />
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hanz30z&layout=compact&theme=radical" alt="Top Languages" />
+  </a>
 </div>
-
-<br/>
 
 <p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
