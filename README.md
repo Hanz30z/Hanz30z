@@ -14,7 +14,7 @@
       <ul>
         <li>🔭 <b>Fokus Utama:</b> Python & JavaScript</li>
         <li>🌱 <b>Sedang Mempelajari:</b> React ⚛️ & Arsitektur Web</li>
-        <li>⚡ <b>Minat:</b> Automation, CLI Utilities, & Scripting</li>
+        <li>⚡ <b>Minat:</b> Automasi, CLI Utilities, & Scripting</li>
       </ul>
     </td>
     <td width="45%" valign="top" align="center">
