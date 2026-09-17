@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game - Johan Eka Saputra</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #58a6ff;
+    }
+    .score-board {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .score { color: #3fb950; }
+    .high-score { color: #d29922; }
+
+    #canvas-container {
+      position: relative;
+    }
+    canvas {
+      border: 2px solid #30363d;
+      border-radius: 8px;
+      background: #161b22;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 17, 23, 0.85);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .overlay.hidden { display: none; }
+    .overlay h2 { font-size: 1.6rem; color: #f85149; }
+    .overlay p { color: #8b949e; }
+    .btn {
+      background: #238636;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #2ea043; }
+
+    /* Mobile Controls */
+    .controls {
+      display: grid;
+      grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .control-btn {
+      width: 60px;
+      height: 60px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .control-btn:active { background: #30363d; }
+    .up { grid-area: up; }
+    .left { grid-area: left; }
+    .right { grid-area: right; }
+    .down { grid-area: down; }
+
+    @media (min-width: 768px) {
+      .controls { display: none; }
+    }
+    a.back-link {
+      margin-top: 20px;
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    a.back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <h1>🐍 Snake Game</h1>
+
+  <div class="score-board">
+    <div>Skor: <span id="score" class="score">0</span></div>
+    <div>Tertinggi: <span id="highScore" class="high-score">0</span></div>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    
+    <div id="startOverlay" class="overlay">
+      <h2>🐍 Snake Game</h2>
+      <p>Gunakan tombol panah untuk bergerak</p>
+      <button class="btn" id="startBtn">Mulai Main</button>
+    </div>
+
+    <div id="gameOverOverlay" class="overlay hidden">
+      <h2>Game Over!</h2>
+      <p>Skor Akhir: <span id="finalScore" class="score">0</span></p>
+      <button class="btn" id="restartBtn">Main Lagi</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn up" id="btnUp">▲</button>
+    <button class="control-btn left" id="btnLeft">◄</button>
+    <button class="control-btn right" id="btnRight">►</button>
+    <button class="control-btn down" id="btnDown">▼</button>
+  </div>
+
+  <a href="https://github.com/Hanz30z" class="back-link">← Kembali ke Profil GitHub</a>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const scoreEl = document.getElementById('score');
+    const highScoreEl = document.getElementById('highScore');
+    const finalScoreEl = document.getElementById('finalScore');
+
+    const startOverlay = document.getElementById('startOverlay');
+    const gameOverOverlay = document.getElementById('gameOverOverlay');
+    const startBtn = document.getElementById('startBtn');
+    const restartBtn = document.getElementById('restartBtn');
+
+    const GRID_SIZE = 20;
+    const TILE_COUNT = canvas.width / GRID_SIZE;
+
+    let snake = [];
+    let food = { x: 0, y: 0 };
+    let dx = GRID_SIZE;
+    let dy = 0;
+    let score = 0;
+    let highScore = localStorage.getItem('snake_high_score') || 0;
+    let gameInterval = null;
+    let speed = 100;
+    let gameRunning = false;
+
+    highScoreEl.textContent = highScore;
+
+    function initGame() {
+      snake = [
+        { x: 10 * GRID_SIZE, y: 10 * GRID_SIZE },
+        { x: 9 * GRID_SIZE, y: 10 * GRID_SIZE },
+        { x: 8 * GRID_SIZE, y: 10 * GRID_SIZE }
+      ];
+      dx = GRID_SIZE;
+      dy = 0;
+      score = 0;
+      speed = 100;
+      scoreEl.textContent = score;
+      spawnFood();
+    }
+
+    function spawnFood() {
+      food.x = Math.floor(Math.random() * TILE_COUNT) * GRID_SIZE;
+      food.y = Math.floor(Math.random() * TILE_COUNT) * GRID_SIZE;
+      // Jangan spawn di badan snake
+      for (let segment of snake) {
+        if (segment.x === food.x && segment.y === food.y) {
+          spawnFood();
+          break;
+        }
+      }
+    }
+
+    function draw() {
+      // Clear canvas
+      ctx.fillStyle = '#161b22';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw Grid (subtle)
+      ctx.strokeStyle = '#21262d';
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < canvas.width; i += GRID_SIZE) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+      }
+
+      // Draw Food
+      ctx.fillStyle = '#f85149';
+      ctx.beginPath();
+      ctx.arc(food.x + GRID_SIZE / 2, food.y + GRID_SIZE / 2, GRID_SIZE / 2 - 2, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Draw Snake
+      snake.forEach((segment, index) => {
+        ctx.fillStyle = index === 0 ? '#3fb950' : '#2ea043';
+        ctx.fillRect(segment.x + 1, segment.y + 1, GRID_SIZE - 2, GRID_SIZE - 2);
+      });
+    }
+
+    function move() {
+      const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+      // Nabrak tembok
+      if (head.x < 0 || head.x >= canvas.width || head.y < 0 || head.y >= canvas.height) {
+        gameOver();
+        return;
+      }
+
+      // Nabrak diri sendiri
+      for (let segment of snake) {
+        if (head.x === segment.x && head.y === segment.y) {
+          gameOver();
+          return;
+        }
+      }
+
+      snake.unshift(head);
+
+      // Makan food
+      if (head.x === food.x && head.y === food.y) {
+        score += 10;
+        scoreEl.textContent = score;
+        if (score > highScore) {
+          highScore = score;
+          highScoreEl.textContent = highScore;
+          localStorage.setItem('snake_high_score', highScore);
+        }
+        spawnFood();
+        // Nambah kecepatan setiap 50 poin
+        if (score % 50 === 0 && speed > 50) {
+          speed -= 5;
+          clearInterval(gameInterval);
+          gameInterval = setInterval(gameLoop, speed);
+        }
+      } else {
+        snake.pop();
+      }
+    }
+
+    function gameLoop() {
+      move();
+      if (gameRunning) draw();
+    }
+
+    function startGame() {
+      initGame();
+      gameRunning = true;
+      startOverlay.classList.add('hidden');
+      gameOverOverlay.classList.add('hidden');
+      draw();
+      if (gameInterval) clearInterval(gameInterval);
+      gameInterval = setInterval(gameLoop, speed);
+    }
+
+    function gameOver() {
+      gameRunning = false;
+      clearInterval(gameInterval);
+      finalScoreEl.textContent = score;
+      gameOverOverlay.classList.remove('hidden');
+    }
+
+    // Input handlers
+    document.addEventListener('keydown', (e) => {
+      if (!gameRunning) return;
+      if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -GRID_SIZE; }
+      else if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = GRID_SIZE; }
+      else if (e.key === 'ArrowLeft' && dx === 0) { dx = -GRID_SIZE; dy = 0; }
+      else if (e.key === 'ArrowRight' && dx === 0) { dx = GRID_SIZE; dy = 0; }
+    });
+
+    document.getElementById('btnUp').addEventListener('click', () => { if (dy === 0) { dx = 0; dy = -GRID_SIZE; } });
+    document.getElementById('btnDown').addEventListener('click', () => { if (dy === 0) { dx = 0; dy = GRID_SIZE; } });
+    document.getElementById('btnLeft').addEventListener('click', () => { if (dx === 0) { dx = -GRID_SIZE; dy = 0; } });
+    document.getElementById('btnRight').addEventListener('click', () => { if (dx === 0) { dx = GRID_SIZE; dy = 0; } });
+
+    startBtn.addEventListener('click', startGame);
+    restartBtn.addEventListener('click', startGame);
+
+    draw();
+  </script>
+</body>
+</html>

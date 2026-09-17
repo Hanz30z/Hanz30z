@@ -60,3 +60,9 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Hanz30z/Hanz30z/output/github-contribution-grid-snake.svg" alt="Animasi Kontribusi Ular">
 </p>
+
+<p align="center">
+  <a href="https://hanz30z.github.io/Hanz30z/snake-game/">
+    <img src="https://img.shields.io/badge/🎮%20Mainkan%20Snake%20Game-Klik%20Disini-2ea043?style=for-the-badge&logo=googleplay&logoColor=white" alt="Play Snake Game" />
+  </a>
+</p>
